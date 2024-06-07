@@ -1,0 +1,1 @@
+curl -i -X GET -H "Content-Type:application/json" -d "{  \"name\" : \"alcaw\", \"age\" : 22 }" http://localhost:8081/api/v1/kafka/publish
