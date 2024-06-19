@@ -1,0 +1,56 @@
+package com.inkhyang.storage.application;
+
+import com.inkhyang.storage.entity.Product;
+import com.inkhyang.storage.repository.ProductRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@AllArgsConstructor
+public class StorageServiceImpl implements StorageService {
+    private final ProductRepository productRepository;
+
+
+    @Override
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Product getProductByArticle(String article) {
+        return productRepository.findByArticle(article);
+    }
+
+    @Override
+    public List<Product> getAllProductsByAdult(Boolean adult) {
+        return productRepository.findAllByAdult(adult);
+    }
+
+    @Override
+    public Product updateProductAmtByArticle(String article, Integer newAmt) {
+        Product product = productRepository.findByArticle(article);
+        product.setAmt(newAmt);
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Product decreaseProductAmtByArticle(String article, Integer soldAmt) {
+        Product product = productRepository.findByArticle(article);
+        product.setAmt(product.getAmt() - soldAmt);
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Product updateProductAdultByArticle(String article, Boolean adult) {
+        Product product = productRepository.findByArticle(article);
+        product.setAdult(adult);
+        return product;
+    }
+
+    @Override
+    public void deleteProductByArticle(String article) {
+        productRepository.deleteByArticle(article);
+    }
+}

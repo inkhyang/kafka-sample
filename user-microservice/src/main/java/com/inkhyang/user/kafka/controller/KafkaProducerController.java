@@ -1,6 +1,6 @@
 package com.inkhyang.user.kafka.controller;
 
-import com.inkhyang.base.dto.UserDto;
+import com.inkhyang.base.dto.user.UserDto;
 import com.inkhyang.user.kafka.KafkaProducer;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

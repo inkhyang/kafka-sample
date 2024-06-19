@@ -1,6 +1,6 @@
 package com.inkhyang.document.controller;
 
-import com.inkhyang.base.dto.UserDto;
+import com.inkhyang.base.dto.user.UserDto;
 import com.inkhyang.document.application.service.UserService;
 import com.inkhyang.document.dto.UserDtoMapper;
 import com.inkhyang.document.entity.User;
