@@ -1,6 +1,6 @@
 package com.inkhyang.document.kafka;
 
-import com.inkhyang.base.dto.UserDto;
+import com.inkhyang.base.dto.user.UserDto;
 import com.inkhyang.base.utils.AppConstants;
 import com.inkhyang.document.application.service.UserService;
 import com.inkhyang.document.dto.UserDtoMapper;

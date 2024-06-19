@@ -1,6 +1,6 @@
 package com.inkhyang.document.dto;
 
-import com.inkhyang.base.dto.UserDto;
+import com.inkhyang.base.dto.user.UserDto;
 import com.inkhyang.document.entity.User;
 import org.mapstruct.Mapper;
 

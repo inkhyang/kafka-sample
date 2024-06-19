@@ -1,6 +1,6 @@
 package com.inkhyang.user.kafka;
 
-import com.inkhyang.base.dto.UserDto;
+import com.inkhyang.base.dto.user.UserDto;
 import com.inkhyang.base.utils.AppConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
