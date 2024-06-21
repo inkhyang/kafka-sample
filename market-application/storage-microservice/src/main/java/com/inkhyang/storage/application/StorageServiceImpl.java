@@ -43,9 +43,9 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public Product updateProductAdultByArticle(String article, Boolean adult) {
+    public Product updateProductPriceByArticle(String article, Double price) {
         Product product = productRepository.findByArticle(article);
-        product.setAdult(adult);
+        product.setPrice(price);
         return product;
     }
 
