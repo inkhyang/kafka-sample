@@ -10,6 +10,6 @@ public interface StorageService {
     List<Product> getAllProductsByAdult(Boolean adult);
     Product updateProductAmtByArticle(String article, Integer newAmt);
     Product decreaseProductAmtByArticle(String article, Integer soldAmt);
-    Product updateProductAdultByArticle(String article, Boolean adult);
+    Product updateProductPriceByArticle(String article, Double price);
     void deleteProductByArticle(String article);
 }

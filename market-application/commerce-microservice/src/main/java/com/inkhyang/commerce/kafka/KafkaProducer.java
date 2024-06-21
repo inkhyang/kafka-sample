@@ -1,6 +1,7 @@
 package com.inkhyang.commerce.kafka;
 
 import com.inkhyang.base.dto.order.OrderDto;
+import com.inkhyang.base.dto.order.ProductDto;
 import com.inkhyang.base.dto.user.VerificatedUserDto;
 import com.inkhyang.base.utils.ProductAppConstants;
 import org.slf4j.Logger;
@@ -24,9 +25,13 @@ public class KafkaProducer {
         VerificatedUserDto user = orderDto.userDto();
         LOGGER.info(String.format("\n Order details: \n Username: %s \n Id card: %s",
                 user.name(), user.idCard()));
-        orderDto.products().forEach(p ->
-                        LOGGER.info(String.format("Product article -> %s in amount %s",
-                        p.article(), p.amt())));
+        double totalPrice = 0;
+        for (ProductDto p : orderDto.products()) {
+            totalPrice += p.price();
+            LOGGER.info(String.format("Product article -> %s \n price %s in amount %s purchase price %s",
+                    p.article(), p.price(), p.amt(), p.price() * p.amt()));
+        }
+        LOGGER.info(String.format("total price: %s", totalPrice));
 
     }
 }

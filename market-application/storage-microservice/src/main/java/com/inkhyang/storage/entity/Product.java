@@ -20,5 +20,6 @@ public class Product {
     @Column(nullable = false, unique = true)
     private String article;
     private Integer amt;
+    private Double price;
     private Boolean adult;
 }
