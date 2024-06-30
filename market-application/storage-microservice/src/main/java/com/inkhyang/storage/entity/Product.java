@@ -19,7 +19,8 @@ public class Product {
     private String name;
     @Column(nullable = false, unique = true)
     private String article;
-    private Integer amt;
+    private Integer availableAmt;
+    private Integer reservedAmt;
     private Double price;
     private Boolean adult;
 }
