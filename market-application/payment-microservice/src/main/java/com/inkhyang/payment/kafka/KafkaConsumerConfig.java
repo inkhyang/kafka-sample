@@ -1,4 +1,4 @@
-package com.inkhyang.storage.kafka;
+package com.inkhyang.payment.kafka;
 
 import com.inkhyang.base.dto.order.Order;
 import com.inkhyang.base.utils.ProductAppConstants;

@@ -18,6 +18,7 @@
         <module>document-microservice</module>
         <module>kafka-dtos</module>
         <module>market-application</module>
+        <module>market-application/payment-microservice</module>
     </modules>
 
     <properties>

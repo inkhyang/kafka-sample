@@ -1,0 +1,3 @@
+curl -i -X POST -H "Content-Type:application/json" -d "{  \"name\" : \"agawa\", \"article\" : \"agawa\", \"availableAmt\": 200, \"reservedAmt\" : 0, \"price\" : 200, \"adult\" : false }" http://localhost:8083/store/products/new
+
+curl -i -X POST -H "Content-Type:application/json" -d "{  \"name\" : \"aguwa\", \"article\" : \"aguwa\", \"availableAmt\": 200, \"reservedAmt\" : 0, \"price\" : 100, \"adult\" : true }" http://localhost:8083/store/products/new

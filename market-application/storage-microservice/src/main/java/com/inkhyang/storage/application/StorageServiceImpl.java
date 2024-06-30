@@ -31,14 +31,15 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public Product updateProductAmtByArticle(String article, Integer newAmt) {
         Product product = productRepository.findByArticle(article);
-        product.setAmt(newAmt);
+        product.setAvailableAmt(newAmt);
         return productRepository.save(product);
     }
 
     @Override
     public Product decreaseProductAmtByArticle(String article, Integer soldAmt) {
         Product product = productRepository.findByArticle(article);
-        product.setAmt(product.getAmt() - soldAmt);
+        product.setAvailableAmt(product.getAvailableAmt() - soldAmt);
+        product.setReservedAmt(product.getReservedAmt() + soldAmt);
         return productRepository.save(product);
     }
 

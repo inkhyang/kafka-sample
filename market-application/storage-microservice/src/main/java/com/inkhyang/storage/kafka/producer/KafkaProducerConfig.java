@@ -1,4 +1,4 @@
-package com.inkhyang.commerce.kafka;
+package com.inkhyang.storage.kafka.producer;
 
 import com.inkhyang.base.dto.order.Order;
 import org.apache.kafka.clients.producer.ProducerConfig;
