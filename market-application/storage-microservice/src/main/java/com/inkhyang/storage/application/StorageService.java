@@ -1,5 +1,6 @@
 package com.inkhyang.storage.application;
 
+import com.inkhyang.base.dto.order.ProductDto;
 import com.inkhyang.storage.entity.Product;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface StorageService {
     Product decreaseProductAmtByArticle(String article, Integer soldAmt);
     Product updateProductPriceByArticle(String article, Double price);
     void deleteProductByArticle(String article);
+    boolean process(List<ProductDto> products);
 }
