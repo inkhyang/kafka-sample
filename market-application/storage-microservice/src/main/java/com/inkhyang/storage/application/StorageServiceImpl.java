@@ -1,5 +1,6 @@
 package com.inkhyang.storage.application;
 
+import com.inkhyang.base.dto.order.ProductDto;
 import com.inkhyang.storage.entity.Product;
 import com.inkhyang.storage.repository.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 public class StorageServiceImpl implements StorageService {
     private final ProductRepository productRepository;
+    private final String response = "OK";
+    private final String badResponse = "NOT_OK";
 
 
     @Override
@@ -53,5 +56,17 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public void deleteProductByArticle(String article) {
         productRepository.deleteByArticle(article);
+    }
+
+    @Override
+    public boolean process(List<ProductDto> products) {
+        for(ProductDto p : products) {
+            Product persisted = productRepository.findByArticle(p.article());
+            if(persisted.getAvailableAmt() < p.amt()) {
+                return false;
+            }
+            this.decreaseProductAmtByArticle(p.article(), p.amt());
+        }
+        return true;
     }
 }
