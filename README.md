@@ -4,7 +4,9 @@ Spring boot 3.1.2,
 mapstruct,
 Spring Data JPA,
 db: h2,
-lombok
+lombok, 
+slf4j-api 2.0.13,
+jackson-databind
 
 id infrastructure:
 user microservice (kafka producer) ---message---> document microservice (kafka consumer) ------> grant id card ------> to do
